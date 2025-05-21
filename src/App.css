@@ -51,37 +51,39 @@ select {
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
+/* 공통 버튼 스타일 통일 */
 button {
-  padding: 10px;
+  padding: 10px 16px;
+  height: 40px;
+  line-height: 1;
   margin-right: 8px;
   border: none;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: inherit;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s, transform 0.15s ease-in-out;
 }
 
+/* 버튼 컬러별 스타일 */
 .save {
-  margin-bottom: 15px;
   background-color: #ffd1dc;
-  font-weight: bold;
-
   color: #333;
 }
 .save:hover {
   background-color: #ffb6c1;
-  transform: scale(1.03);
 }
 
 .hold {
   background-color: #fff6b7;
   color: #555;
-  font-weight: bold;
-  margin-top: 20px;
 }
 .hold:hover {
   background-color: #ffe66d;
-  transform: scale(1.03);
 }
 
 .delete {
@@ -90,7 +92,6 @@ button {
 }
 .delete:hover {
   background-color: #9ef0a0;
-  transform: scale(1.03);
 }
 
 .restore {
@@ -99,7 +100,6 @@ button {
 }
 .restore:hover {
   background-color: #99e9f2;
-  transform: scale(1.03);
 }
 
 .list li {
@@ -111,7 +111,7 @@ button {
 }
 
 .list li.hold {
-  background-color: #437d77;
+  background-color: #6e6e6e;
   color: #666;
   text-decoration: line-through;
 }
@@ -157,4 +157,64 @@ textarea:focus {
   outline: none;
   border-color: #d69fdd;
   background-color: #fceeff;
+}
+
+/* 보류 상태일 때 항목 스타일 */
+.task-item.hold {
+  background-color: #444;
+  color: #fff;
+}
+
+/* 완료 상태일 때 항목 스타일 */
+.task-item.done {
+  background-color: #ffe0e0;
+  color: #444;
+  text-decoration: line-through;
+}
+
+.task-item.inquiry {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+}
+
+/* 문의 항목 스타일 */
+.task-item.inquiry {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+}
+
+/* 버튼 정렬 */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* 완료 버튼 강조 스타일 */
+button.complete {
+  background-color: #d0f0c0;
+  color: #2e7d32;
+  font-weight: bold;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button.complete:hover {
+  background-color: #eda1a1;
+}
+
+button.complete {
+  background-color: #f0c0c0;
+  color: #7d2e2e;
+  font-weight: bold;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: auto; /* 오른쪽 정렬 */
 }
